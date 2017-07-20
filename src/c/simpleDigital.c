@@ -39,7 +39,6 @@ static void battery_update_proc(Layer *layer, GContext *ctx) {
     GRect bounds = layer_get_bounds(layer);
 
     int battery_width = (bounds.size.w * s_battery_level) / 100;
-    //int battery_width = (bounds.size.w * sc_fake_battery) / 100;
 
     graphics_context_set_fill_color(ctx, GColorWhite);
     graphics_fill_rect(ctx, GRect(0, 0,battery_width, bounds.size.h), 0, GCornerNone);
@@ -49,11 +48,9 @@ static void lower_battery_update_proc(Layer *layer, GContext *ctx) {
     GRect bounds = layer_get_bounds(layer);
 
     int battery_width = (bounds.size.w * s_battery_level) / 100;
-    //int battery_width = (bounds.size.w * sc_fake_battery) / 100;
-    int bar_width = bounds.size.w - battery_width;
 
     graphics_context_set_fill_color(ctx, GColorWhite);
-    graphics_fill_rect(ctx, GRect(0, battery_width, bar_width, bounds.size.h), 0, GCornerNone);
+    graphics_fill_rect(ctx, GRect(bounds.size.w - battery_width, 0, bounds.size.w, bounds.size.h), 0, GCornerNone);
 }
 
 static void update_time() {
