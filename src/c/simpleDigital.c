@@ -110,7 +110,7 @@ static void main_window_load(Window *window) {
     setup_text_layer(s_middle_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_BOLD));
 
     text_layer_set_text(s_middle_layer, ":");
-    text_layer_set_text_color(s_minutes_layer, PBL_IF_COLOR_ELSE(GColorRed, GColorWhite));
+    text_layer_set_text_color(s_minutes_layer, PBL_IF_BW_ELSE(GColorWhite ,GColorRed));
 
     layer_add_child(window_layer, text_layer_get_layer(s_day_layer));
     layer_add_child(window_layer, text_layer_get_layer(s_time_layer));
