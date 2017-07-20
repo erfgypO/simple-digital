@@ -13,8 +13,6 @@ static Layer *s_lower_battery_layer;
 static int s_offset = 20;
 static int s_battery_level;
 
-static const int sc_fake_battery = 40; 
-
 int s_time_offset;
 int s_day_offset;
 int s_year_offset;
